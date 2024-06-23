@@ -24,6 +24,6 @@ overlay.classList.add('hidden');
 }
 
 btnCloseModal.addEventListener('click', closeModal);
-
+overlay.addEventListener('click', closeModal);
 
 
