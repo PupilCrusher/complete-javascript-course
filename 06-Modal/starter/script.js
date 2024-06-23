@@ -13,6 +13,17 @@ for(let i = 0; i < btnsOpenModal.length; i++) {
     console.log('button clicked');
     //classlist removed
     modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+
     });
 }
+//DRY PRINCIPLES
+const closeModal = () => {
+modal.classList.add('hidden');
+overlay.classList.add('hidden');
+}
+
+btnCloseModal.addEventListener('click', closeModal);
+
+
 
