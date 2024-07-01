@@ -8,22 +8,27 @@ const btnCloseModal = document.querySelector('.close-modal');
 
 const btnsOpenModal = document.querySelectorAll('.show-modal');
 
-for(let i = 0; i < btnsOpenModal.length; i++) {
-    btnsOpenModal[i].addEventListener('click', function() {
-    console.log('button clicked');
-    //classlist removed
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-
-    });
-}
+const openModal = () => {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
 //DRY PRINCIPLES
 const closeModal = () => {
-modal.classList.add('hidden');
-overlay.classList.add('hidden');
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+for (let i = 0; i < btnsOpenModal.length; i++) {
+  btnsOpenModal[i].addEventListener('click', openModal);
 }
 
 btnCloseModal.addEventListener('click', closeModal);
+document.addEventListener('keydown', function (e) {
+  console.log(e.key);
+  if (e.key === 'Escape') {
+    //identifying pressed which key
+    console.log('Escape Pressed');
+    closeModal();
+  }
+});
 overlay.addEventListener('click', closeModal);
-
-

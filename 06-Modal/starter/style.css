@@ -35,8 +35,7 @@ body {
 .show-modal:hover {
   background-color: blueviolet;
   transition-delay: 0.25s;
-  
-} 
+}
 .close-modal {
   position: absolute;
   top: 1.2rem;
