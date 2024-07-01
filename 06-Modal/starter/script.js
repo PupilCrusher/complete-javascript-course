@@ -28,7 +28,9 @@ document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') {
     //identifying pressed which key
     console.log('Escape Pressed');
-    closeModal();
+    if (!modal.classList.contains('hidden')) {
+      closeModal();
+    }
   }
 });
 overlay.addEventListener('click', closeModal);
